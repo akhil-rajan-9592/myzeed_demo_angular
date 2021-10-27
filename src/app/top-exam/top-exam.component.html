@@ -1,0 +1,35 @@
+<div class="inner-banner">
+  <img src="../../assets/images/inner-banner-11.png" alt="">
+</div>
+<div class="pageHeading">
+  <div class="container">
+      <h1>Top Exam</h1>
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Top Exam</li>
+        </ol>
+      </nav>
+  </div>
+</div>
+
+<div class="notificationWrapper top-xamWrapper">
+  <div class="container">
+    <ul>
+      <li *ngFor="let exam of allexams.Data">
+        <div class="date">
+          <h3 class="text-center">{{exam.exam_date | date : 'MMM'}}</h3>
+          <h2 class="text-center">{{exam.exam_date | date : 'dd'}}</h2>
+        </div>
+        <div class="detail">
+          <h2>{{exam.exam_name | titlecase}}</h2>
+          <p>{{exam.description}}</p>
+            <div class="date-download">
+              <p><img src="../../assets/images/calendar.png" alt=""><span>{{exam.date_of_post | date:'longDate'}}</span></p>
+              <a [href]="exam.article" download><img src="../../assets/images/download-1.png" alt=""><span>Download Files</span></a>
+            </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>

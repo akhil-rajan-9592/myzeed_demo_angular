@@ -1,0 +1,95 @@
+<div class="inner-banner">
+  <img src="../../assets/images/inner-banner-14.png" alt="">
+</div>
+<div class="pageHeading">
+  <div class="container">
+    <h1>Request </h1>
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="#">Home</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Request</li>
+      </ol>
+    </nav>
+  </div>
+</div>
+
+
+<section class="privacy-policy-section">
+  <div class="container">
+    <h1 class="main-heading">Request Appointment</h1>
+    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+      industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+      scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into
+      electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of
+      Letraset sheets containing Lorem Ipsum.</p>
+    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+      industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+      scrambled it to make a type specimen book.</p>
+  </div>
+</section>
+
+<section class="appointment-section">
+  <div class="container">
+    <h2>Appointment</h2>
+    <div class="row" [formGroup]="addrequest">
+      <div class="col-lg-6">
+        <div class="form-group">
+          <input formControlName="name" name="name" type="text" class="form-control" placeholder="Enter the Name">
+          <img class="black" src="../../assets/images/user-2.png" alt="">
+          <img class="green" src="../../assets/images/user.png" alt="">
+          <div class="invalid" *ngIf="submitted && myForm.name.errors" style="color: #fd3550;">Please enter the Name</div>
+        </div>
+        <div class="form-group">
+          <input formControlName="phone" name="phone" type="text" class="form-control" placeholder="Phone Number">
+          <img class="black" src="../../assets/images/phone-1.png" alt="">
+          <img class="green" src="../../assets/images/phone-1-green.png" alt="">
+          <div class="invalid" *ngIf="submitted && myForm.phone.errors" style="color: #fd3550;">Please enter the Phone Number</div>
+        </div>
+        <div class="form-group">
+          <input formControlName="email" name="email" type="email" class="form-control" placeholder="Email Address">
+          <img class="black" src="../../assets/images/mail-2.png" alt="">
+          <img class="green" src="../../assets/images/mail-2-green.png" alt="">
+          <div class="invalid" *ngIf="submitted && myForm.email.errors" style="color: #fd3550;">Please enter the Email Address</div>
+        </div>
+        <div class="form-group">
+          <textarea formControlName="message" name="message" class="form-control" placeholder="Messages Here"></textarea>
+          <img class="black" src="../../assets/images/mail-2.png" alt="">
+          <img class="green" src="../../assets/images/mail-2-green.png" alt="">
+          <div class="invalid" *ngIf="submitted && myForm.message.errors" style="color: #fd3550;">Please enter the Message</div>
+        </div>
+      </div>
+        <div class="col-lg-6">
+          <div class="select-below">
+            <h3>Select the below options that you need</h3>
+            <div class="custom-control custom-checkbox">
+              <input  (change)="checkBox($event)" value="NRI Quota" type="checkbox" class="custom-control-input" id="customCheck1">
+              <label class="custom-control-label" for="customCheck1">NRI Quota</label>
+            </div>
+            <div class="custom-control custom-checkbox">
+              <input  (change)="checkBox($event)" value="Scholarship" type="checkbox" class="custom-control-input" id="customCheck2">
+              <label class="custom-control-label" for="customCheck2">Scholarship</label>
+            </div>
+            <div class="custom-control custom-checkbox">
+              <input  (change)="checkBox($event)" value="Institute Registration" type="checkbox" class="custom-control-input" id="customCheck3">
+              <label class="custom-control-label" for="customCheck3">Institute Registration</label>
+            </div>
+            <div class="custom-control custom-checkbox">
+              <input  (change)="checkBox($event)" value="Institute Registration" type="checkbox" class="custom-control-input" id="customCheck4">
+              <label class="custom-control-label" for="customCheck4">Institute Registration</label>
+            </div>
+          </div>
+        </div>
+        <div class="col-12">
+          <div class="standard">
+            <div class="custom-control custom-checkbox">
+              <input formControlName="lorem" type="checkbox" class="custom-control-input" id="customCheck5">
+              <label class="custom-control-label" for="customCheck5">Lorem Ipsum has been the industry's <span>standard dummy text</span> ever since the 1500s, when an unknown printer</label>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 text-right">
+          <button class="main-btn" (click)="submit()">Submit</button>
+        </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,132 @@
+<div class="inner-banner">
+  <img src="../../assets/images/inner-banner-8.png" alt="">
+</div>
+<div class="pageHeading">
+  <div class="container">
+      <h1>Find Job</h1>
+      <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item active" aria-current="page">Find Job</li>
+          </ol>
+      </nav>
+  </div>
+</div>
+
+
+<section class="search-college-section find-jobPage-section">
+  <div class="container">
+      <form action="">
+          <div class="search-wrapper findJob-wrapper">
+              <input type="text" placeholder="Job title or Keywords">
+              <img src="../../assets/images/search.png" alt="">
+          </div>
+          <div class="location-select">
+              <select name="" id="">
+                  <option value="">Location</option>
+                  <option value="">Kochi</option>
+              </select>
+              <img src="../../assets/images/location.png" alt="">
+          </div>
+          <button class="main-btn">Find Job</button>
+          <ul class="search-result">
+              <li><a href=""><span>Birla Institute Of Technology And Science , Pilani</span></a></li>
+              <li><a href=""><span>Birla Institute Of Technology And Science , Pilani</span></a></li>
+              <li><a href=""><span>Birla Institute Of Technology And Science , Pilani</span></a></li>
+          </ul>
+      </form>
+  </div>
+</section>
+
+<div class="container">
+  <div class="findParttime-job">
+      <input type="text" placeholder="Search job for part-time">
+      <button class="main-btn">Find Job</button>
+  </div>
+</div>
+
+
+<section class="latestJob-list-section">
+  <div class="container">
+    <div class="latestJob-list">
+      <h1 class="main-heading">Latest Jobs</h1>
+      <div class="filterWrapper">
+        <div class="filter">
+          <img class="filterIcon" src="../../assets/images/filter.png" alt="">
+          <ul>
+            <li>
+              <div class="custom-control custom-checkbox">
+                <input (click)="filter($event)" type="radio" name="jobfilter" class="custom-control-input" id="customCheck">
+                <label class="custom-control-label" for="customCheck">All</label>
+              </div>
+            </li>
+            <li>
+              <div class="custom-control custom-checkbox">
+                <input (click)="filter($event)" type="radio" name="jobfilter" class="custom-control-input" id="customCheck1">
+                <label class="custom-control-label" for="customCheck1">Full-time</label>
+              </div>
+            </li>
+            <li>
+              <div class="custom-control custom-checkbox">
+                <input (click)="filter($event)" type="radio" name="jobfilter" class="custom-control-input" id="customCheck2">
+                <label class="custom-control-label" for="customCheck2">part-time</label>
+              </div>
+            </li>
+            <li>
+              <div class="custom-control custom-checkbox">
+                <input (click)="filter($event)" type="radio" name="jobfilter" class="custom-control-input" id="customCheck3">
+                <label class="custom-control-label" for="customCheck3">Remote</label>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="filter-table-wrapper">
+        <table class="filter-table">
+          <thead>
+            <tr>
+              <th>Company</th>
+              <th>Position</th>
+              <th>Type of Job</th>
+              <th>Post</th>
+              <th>Place</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let job of filterjob">
+              <td>
+                <div class="company">
+                  <div class="icon">
+                    <img [src]="job.company_logo" alt="">
+                  </div>
+                  <span>{{job.company | titlecase}}</span>
+                </div>
+              </td>
+              <td>{{job.position | titlecase}}</td>
+              <td>{{job.type_of_job | titlecase}}</td>
+              <td> {{job.date_of_post}} </td>
+              <td>{{job.place | titlecase}}</td>
+              <td>
+                <button class="apply">Apply</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="pagination-wrapper">
+      <ul class="pagination ">
+        <li class="page-item active" aria-current="page">
+          <span class="page-link">
+            1
+            <span class="sr-only">(current)</span>
+          </span>
+        </li>
+        <li class="page-item"><a class="page-link" href="#">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+      </ul>
+    </div>
+  </div>
+</section>
